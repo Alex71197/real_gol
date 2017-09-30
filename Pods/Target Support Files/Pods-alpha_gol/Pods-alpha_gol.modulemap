@@ -1,0 +1,6 @@
+framework module Pods_alpha_gol {
+  umbrella header "Pods-alpha_gol-umbrella.h"
+
+  export *
+  module * { export * }
+}

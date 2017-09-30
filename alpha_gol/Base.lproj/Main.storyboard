@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Medium</string>
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--GoalsVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GoalsVC" customModule="alpha_gol" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Du7-B1-j5U"/>
+                        <viewControllerLayoutGuide type="bottom" id="ie0-hG-CW5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBR-oH-a5c">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gols" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvA-f1-wz3">
+                                        <rect key="frame" x="164.5" y="28.5" width="46.5" height="30.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1l-Qf-k0N">
+                                        <rect key="frame" x="322" y="21.5" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="0u7-Kw-eh7"/>
+                                            <constraint firstAttribute="width" constant="45" id="g8Q-el-cpl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="40"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YuR-XS-xP0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.76862133669999999" blue="0.4675048523" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="tvA-f1-wz3" firstAttribute="centerY" secondItem="Q1l-Qf-k0N" secondAttribute="centerY" id="3pA-Q7-qTA"/>
+                                    <constraint firstAttribute="bottom" secondItem="tvA-f1-wz3" secondAttribute="bottom" constant="11" id="F0n-5d-ogn"/>
+                                    <constraint firstItem="tvA-f1-wz3" firstAttribute="centerX" secondItem="VBR-oH-a5c" secondAttribute="centerX" id="nOh-Oa-xga"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q1l-Qf-k0N" secondAttribute="trailing" constant="8" id="oBB-o2-sbi"/>
+                                    <constraint firstAttribute="height" constant="70" id="oPc-aD-3WE"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sbh-pn-yfS">
+                                <rect key="frame" x="26" y="170" width="322" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Gols!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OV-Te-7Sz">
+                                        <rect key="frame" x="42.5" y="0.0" width="237" height="40"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="29"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To start tracking your goals, create one!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znl-de-Vqm">
+                                        <rect key="frame" x="0.0" y="40" width="322" height="25"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fhG-C1-k7t">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalCell" rowHeight="70" id="F3e-Nf-o84" customClass="GoalCell" customModule="alpha_gol" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F3e-Nf-o84" id="9BB-vV-7iA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HER-Rm-b9b">
+                                                    <rect key="frame" x="12" y="12" width="161" height="51.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink coffee. A lot." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlx-cI-W0l">
+                                                            <rect key="frame" x="0.0" y="0.0" width="161" height="26"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0iV-Sh-yu5">
+                                                            <rect key="frame" x="0.0" y="31" width="77" height="20.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBI-Zp-Qxe">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="37.5" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GE-O1-IUF">
+                                                                    <rect key="frame" x="42.5" y="0.0" width="34.5" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HER-Rm-b9b" firstAttribute="leading" secondItem="9BB-vV-7iA" secondAttribute="leading" constant="12" id="7MC-fF-HYO"/>
+                                                <constraint firstItem="HER-Rm-b9b" firstAttribute="top" secondItem="9BB-vV-7iA" secondAttribute="top" constant="12" id="zLc-tR-O8V"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sbh-pn-yfS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3tQ-eb-tvS"/>
+                            <constraint firstItem="fhG-C1-k7t" firstAttribute="bottom" secondItem="ie0-hG-CW5" secondAttribute="top" id="53c-Si-DE0"/>
+                            <constraint firstItem="VBR-oH-a5c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7c6-ox-UME"/>
+                            <constraint firstItem="fhG-C1-k7t" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="DOj-V4-bj0"/>
+                            <constraint firstItem="VBR-oH-a5c" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NWk-ek-bib"/>
+                            <constraint firstItem="sbh-pn-yfS" firstAttribute="top" secondItem="VBR-oH-a5c" secondAttribute="bottom" constant="100" id="a92-og-51d"/>
+                            <constraint firstItem="fhG-C1-k7t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lye-bT-Vm9"/>
+                            <constraint firstItem="fhG-C1-k7t" firstAttribute="top" secondItem="VBR-oH-a5c" secondAttribute="bottom" id="yfq-pn-vEg"/>
+                            <constraint firstItem="VBR-oH-a5c" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="ylJ-vX-who"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
