@@ -32,7 +32,9 @@ class FinishGoalVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     }
     
     @IBAction func createCategoryPressed(_ sender: Any) {
-        
+        let addCategory = CreateCategoryVC()
+        addCategory.modalPresentationStyle = .custom
+        present(addCategory, animated: true, completion: nil)
     }
     
     // PickerView set up

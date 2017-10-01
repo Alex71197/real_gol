@@ -19,6 +19,8 @@
 		FAB2E55C1F8067A900B52CC0 /* FinishGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2E55B1F8067A900B52CC0 /* FinishGoalVC.swift */; };
 		FAB2E55E1F80696600B52CC0 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2E55D1F80696600B52CC0 /* Goal.swift */; };
 		FAB2E5621F806D9300B52CC0 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2E5611F806D9300B52CC0 /* Category.swift */; };
+		FAB2E5671F80708900B52CC0 /* CreateCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2E5651F80708900B52CC0 /* CreateCategoryVC.swift */; };
+		FAB2E5681F80708900B52CC0 /* CreateCategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB2E5661F80708900B52CC0 /* CreateCategoryVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		FAB2E55B1F8067A900B52CC0 /* FinishGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGoalVC.swift; sourceTree = "<group>"; };
 		FAB2E55D1F80696600B52CC0 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		FAB2E5611F806D9300B52CC0 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		FAB2E5651F80708900B52CC0 /* CreateCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryVC.swift; sourceTree = "<group>"; };
+		FAB2E5661F80708900B52CC0 /* CreateCategoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCategoryVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 		FAB2E53E1F805C1000B52CC0 /* alpha_gol */ = {
 			isa = PBXGroup;
 			children = (
+				FAB2E5691F80709200B52CC0 /* XIBs */,
 				FAB2E5541F805C4600B52CC0 /* Extensions */,
 				FAB2E5531F805C4000B52CC0 /* Models */,
 				FAB2E5521F805C3800B52CC0 /* Views */,
@@ -109,6 +114,7 @@
 				FAB2E5411F805C1000B52CC0 /* GoalsVC.swift */,
 				FAB2E5591F80679A00B52CC0 /* AddGoalVC.swift */,
 				FAB2E55B1F8067A900B52CC0 /* FinishGoalVC.swift */,
+				FAB2E5651F80708900B52CC0 /* CreateCategoryVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -136,6 +142,14 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAB2E5691F80709200B52CC0 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				FAB2E5661F80708900B52CC0 /* CreateCategoryVC.xib */,
+			);
+			path = XIBs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB2E5681F80708900B52CC0 /* CreateCategoryVC.xib in Resources */,
 				FAB2E54A1F805C1000B52CC0 /* LaunchScreen.storyboard in Resources */,
 				FAB2E5471F805C1000B52CC0 /* Assets.xcassets in Resources */,
 				FAB2E5451F805C1000B52CC0 /* Main.storyboard in Resources */,
@@ -262,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAB2E55A1F80679A00B52CC0 /* AddGoalVC.swift in Sources */,
+				FAB2E5671F80708900B52CC0 /* CreateCategoryVC.swift in Sources */,
 				FAB2E5581F80648800B52CC0 /* ClearRoundButton.swift in Sources */,
 				FAB2E55C1F8067A900B52CC0 /* FinishGoalVC.swift in Sources */,
 				FAB2E5421F805C1000B52CC0 /* GoalsVC.swift in Sources */,
