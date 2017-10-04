@@ -14,10 +14,13 @@ class FinishGoalVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     @IBOutlet weak var goalCategoryPicker: UIPickerView!
     
     // Variables
-    var listOfCategories: [Category] = [Category]()
+    var listOfCategories: [String] = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        goalCategoryPicker.dataSource = self
+        goalCategoryPicker.delegate = self
+        listOfCategories = ["Business", "Health", "Fun", "Personal", "Miscellaneous"]
 
         // Do any additional setup after loading the view.
     }
@@ -47,7 +50,7 @@ class FinishGoalVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return listOfCategories[row].categoryName
+        return listOfCategories[row]
     }
     
 }

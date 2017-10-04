@@ -95,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				FAB2E5691F80709200B52CC0 /* XIBs */,
-				FAB2E5541F805C4600B52CC0 /* Extensions */,
 				FAB2E5531F805C4000B52CC0 /* Models */,
 				FAB2E5521F805C3800B52CC0 /* Views */,
 				FAB2E5511F805C3200B52CC0 /* Controllers */,
@@ -135,13 +134,6 @@
 				FAB2E5611F806D9300B52CC0 /* Category.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		FAB2E5541F805C4600B52CC0 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FAB2E5691F80709200B52CC0 /* XIBs */ = {

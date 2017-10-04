@@ -16,11 +16,13 @@ class GoalsVC: UIViewController {
     
     // Variables
     var goals: [Goal] = []
+    var rowHeight: CGFloat = 70
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = rowHeight
 
     }
     
