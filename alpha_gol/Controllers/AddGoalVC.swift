@@ -16,7 +16,7 @@ class AddGoalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     // Variables
     var listOfTypes: [String] = [String]()
-    var selectedType: String!
+    var selectedType: String = "Daily"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +56,9 @@ class AddGoalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if listOfTypes[row] == listOfTypes[0] {
+            selectedType = listOfTypes[0]
+        }
         selectedType = listOfTypes[row]
     }
     

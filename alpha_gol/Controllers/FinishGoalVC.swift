@@ -15,8 +15,8 @@ class FinishGoalVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     @IBOutlet weak var goalCategoryPicker: UIPickerView!
     
     // Variables
-    var listOfCategories: [String] = [String]()
-    var selectedCategory: String!
+    var categories: [String] = []
+    var selectedCategory: String = "Business"
     var goalDescription: String!
     var goalType: String!
     
@@ -26,9 +26,9 @@ class FinishGoalVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         super.viewDidLoad()
         goalCategoryPicker.dataSource = self
         goalCategoryPicker.delegate = self
-        listOfCategories = ["Business", "Health", "Fun", "Personal", "Miscellaneous"]
-
-        // Do any additional setup after loading the view.
+        
+        categories = ["Business", "Health", "Personal", "Fun"]
+        
         print(goalDescription, goalType)
     }
     
@@ -59,21 +59,28 @@ class FinishGoalVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return listOfCategories.count
+        return categories.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return listOfCategories[row]
+        return categories[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedCategory = listOfCategories[row]
+        selectedCategory = categories[row]
     }
     
     // Realm Logic
     func save() {
+        
+        let newGoal = Goal()
+        newGoal.goalDescription = goalDescription
+        newGoal.goalType = goalType
+        newGoal.goalCategory = selectedCategory
+        newGoal.isCompleted = false
+        
         try! realm.write {
-            realm.create(Goal.self, value: [goalDescription, selectedCategory, goalType])
+            realm.add(newGoal)
         }
     }
     

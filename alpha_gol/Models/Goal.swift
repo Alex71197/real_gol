@@ -13,4 +13,5 @@ class Goal: Object {
     @objc dynamic var goalDescription: String!
     @objc dynamic var goalCategory: String!
     @objc dynamic var goalType: String!
+    @objc dynamic var isCompleted = false
 }

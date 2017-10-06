@@ -15,22 +15,26 @@ class GoalsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // Variables
-    var goals = List<Goal>()
+    var goals: Results<Goal>!
     var rowHeight: CGFloat = 70
     
     let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        goals = realm.objects(Goal.self)
+        print(goals)
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = rowHeight
-        
-        let goal = realm.objects(Goal.self)
-        for i in 0..<2 {
-            goals.append(goal[i])
-        }
+        reload()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print(goals)
+        reload()
     }
     
     
@@ -38,6 +42,24 @@ class GoalsVC: UIViewController {
     @IBAction func addBtnPressed(_ sender: Any) {
         guard let addGoalVC = storyboard?.instantiateViewController(withIdentifier: "addGoalVC") else { return }
         presentFirst(viewControllerToPresent: addGoalVC)
+    }
+    
+    func reload() {
+        tableView.reloadData()
+    }
+    
+    func removeGoal(atIndexPath indexPath: IndexPath) {
+        try! realm.write {
+            let goal = goals[indexPath.row]
+            realm.delete(goal)
+        }
+    }
+    
+    func checkGoal(atIndexPath indexPath: IndexPath) {
+        try! realm.write {
+            let goal = goals[indexPath.row]
+            goal.isCompleted = true
+        }
     }
 
 
@@ -59,6 +81,16 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let checkAction = UITableViewRowAction(style: .default, title: "DELETE") { (rowAction, indexPath) in
+            self.removeGoal(atIndexPath: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.reload()
+        }
+        checkAction.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        return [checkAction]
     }
     
 }
