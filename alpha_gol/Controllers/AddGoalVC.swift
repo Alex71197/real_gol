@@ -57,7 +57,6 @@ class AddGoalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedType = listOfTypes[row]
-        print(selectedType)
     }
     
 }

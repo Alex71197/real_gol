@@ -15,14 +15,21 @@ class GoalsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // Variables
-    var goals: [Goal] = []
+    var goals = List<Goal>()
     var rowHeight: CGFloat = 70
+    
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = rowHeight
+        
+        let goal = realm.objects(Goal.self)
+        for i in 0..<2 {
+            goals.append(goal[i])
+        }
 
     }
     
@@ -39,7 +46,10 @@ class GoalsVC: UIViewController {
 extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath)
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath) as? GoalCell else { return UITableViewCell() }
+        let goal = goals[indexPath.row]
+        cell.goalDescriptionLbl.text = goal.goalDescription
+        cell.goalTypeLbl.text = goal.goalType
         return cell
     }
     

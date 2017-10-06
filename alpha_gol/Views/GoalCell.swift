@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class GoalCell: UITableViewCell {
     
@@ -14,6 +15,8 @@ class GoalCell: UITableViewCell {
     @IBOutlet weak var goalDescriptionLbl: UILabel!
     @IBOutlet weak var goalTypeLbl: UILabel!
     
+    // Variables
+    let realm = try! Realm()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,9 +29,11 @@ class GoalCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(goal: Goal) {
-        goalDescriptionLbl.text = goal.goalDescription
-        goalTypeLbl.text = goal.goalType
-    }
+//    func configureCell() {
+//        let goal = realm.objects(Goal.self)
+//
+//        goalDescriptionLbl.text = goal.goalDescription
+//        goalTypeLbl.text = goal.goalType
+//    }
 
 }

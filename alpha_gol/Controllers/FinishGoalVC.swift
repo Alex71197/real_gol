@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FinishGoalVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -15,8 +16,11 @@ class FinishGoalVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     
     // Variables
     var listOfCategories: [String] = [String]()
+    var selectedCategory: String!
     var goalDescription: String!
     var goalType: String!
+    
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +42,9 @@ class FinishGoalVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func finishBtnPressed(_ sender: Any) {
-        
+    @IBAction func createBtnPressed(_ sender: Any) {
+        save()
+        dismissStack()
     }
     
     @IBAction func createCategoryPressed(_ sender: Any) {
@@ -59,6 +64,17 @@ class FinishGoalVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return listOfCategories[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedCategory = listOfCategories[row]
+    }
+    
+    // Realm Logic
+    func save() {
+        try! realm.write {
+            realm.create(Goal.self, value: [goalDescription, selectedCategory, goalType])
+        }
     }
     
 }
