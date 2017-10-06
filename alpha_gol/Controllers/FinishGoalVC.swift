@@ -15,6 +15,8 @@ class FinishGoalVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     
     // Variables
     var listOfCategories: [String] = [String]()
+    var goalDescription: String!
+    var goalType: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,12 @@ class FinishGoalVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         listOfCategories = ["Business", "Health", "Fun", "Personal", "Miscellaneous"]
 
         // Do any additional setup after loading the view.
+        print(goalDescription, goalType)
+    }
+    
+    func initData(description: String, type: String) {
+        self.goalDescription = description
+        self.goalType = type
     }
     
     // Actions

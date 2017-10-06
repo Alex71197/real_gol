@@ -16,13 +16,14 @@ class AddGoalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     // Variables
     var listOfTypes: [String] = [String]()
+    var selectedType: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         goalTypePicker.delegate = self
         goalTypePicker.dataSource = self
         
-        listOfTypes = ["Daily", "Weekly", "Monthly"]
+        listOfTypes = ["Daily", "Weekly", "Monthly", "Custom"]
 
         // Do any additional setup after loading the view.
     }
@@ -33,7 +34,11 @@ class AddGoalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     @IBAction func nextBtnPressed(_ sender: Any) {
-        
+        if goalDescription.text != "" && goalDescription.text != "What is your goal?" {
+            guard let finishGoalVC = storyboard?.instantiateViewController(withIdentifier: "finishGoalVC") as? FinishGoalVC else { return }
+            finishGoalVC.initData(description: goalDescription.text, type: selectedType)
+            presentFirst(viewControllerToPresent: finishGoalVC)
+        }
     }
     
     // PickerView Setup
@@ -48,6 +53,11 @@ class AddGoalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return listOfTypes.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedType = listOfTypes[row]
+        print(selectedType)
     }
     
 }

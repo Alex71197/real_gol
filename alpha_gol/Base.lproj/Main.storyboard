@@ -48,7 +48,6 @@
                                         </state>
                                         <connections>
                                             <action selector="addBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YuR-XS-xP0"/>
-                                            <segue destination="94S-VH-h9U" kind="show" id="hoU-9u-9RY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -155,7 +154,7 @@
         <!--Add GoalVC-->
         <scene sceneID="yeh-fg-u8m">
             <objects>
-                <viewController id="94S-VH-h9U" customClass="AddGoalVC" customModule="alpha_gol" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addGoalVC" id="94S-VH-h9U" customClass="AddGoalVC" customModule="alpha_gol" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jMz-iU-3G6"/>
                         <viewControllerLayoutGuide type="bottom" id="8Nk-yg-NW1"/>
@@ -244,7 +243,6 @@
                                 </state>
                                 <connections>
                                     <action selector="nextBtnPressed:" destination="94S-VH-h9U" eventType="touchUpInside" id="xgW-Mm-VIV"/>
-                                    <segue destination="9j4-q3-p5t" kind="show" id="Und-8b-e9X"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -278,7 +276,7 @@
         <!--Finish GoalVC-->
         <scene sceneID="m1d-9N-VY5">
             <objects>
-                <viewController id="9j4-q3-p5t" customClass="FinishGoalVC" customModule="alpha_gol" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="finishGoalVC" id="9j4-q3-p5t" customClass="FinishGoalVC" customModule="alpha_gol" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uib-X3-68A"/>
                         <viewControllerLayoutGuide type="bottom" id="WsF-2z-9Da"/>
